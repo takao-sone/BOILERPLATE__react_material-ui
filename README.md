@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# Takao Sone's React Boilerplate
+
+## Base Libraries
+
+- React
+- TypeScript
+- ESLint
+- Prettier
+- Stylelint
+- Material-UI
+- React Query
+
+
+Below is the default README texts.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
