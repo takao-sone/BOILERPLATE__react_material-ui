@@ -11,6 +11,8 @@ yarn upgrade-interactive --latest # 何もしない...
 yarn upgrade typescript@latest
 ```
 
+## ESLint
+
 ```shell
 # eslint設定
 yarn eslint --init
@@ -191,3 +193,19 @@ public/
 *.config.js
 .*lintrc.js
 ```
+
+`package.json`へ追加
+```json
+{
+  ...
+  "scripts": {
+    ...
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "preinstall": "typesync || :"
+  },
+  ...
+}
+```
+
+## Prettier
