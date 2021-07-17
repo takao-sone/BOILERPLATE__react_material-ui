@@ -269,3 +269,56 @@ npx eslint-config-prettier 'src/**/*.{js,jsx,ts,tsx}'
   ...
 }
 ```
+
+## stylelint
+
+```shell
+yarn add -D stylelint stylelint-config-standard stylelint-order stylelint-config-recess-order
+(typesync)
+yarn
+```
+
+`.stylelintrc.js`を以下の内容で作成
+
+```js
+module.exports = {
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-recess-order',
+  ],
+  plugins: [
+    'stylelint-order',
+  ],
+  ignoreFiles: [
+    '**/node_modules/**',
+  ],
+  rules: {
+    'string-quotes': 'single',
+  },
+};
+```
+
+`package.json`を以下で編集
+
+```json
+{
+  ...
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "fix": "npm run -s format && npm run -s lint:fix",
+    "lint": "npm run -s lint:style; npm run -s lint:es",
+    "lint:fix": "npm run -s lint:style:fix && npm run -s lint:es:fix",
+    "lint:es": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:es:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:style": "stylelint 'src/**/*.{css,less,sass,scss}'",
+    "lint:style:fix": "stylelint --fix 'src/**/*.{css,less,sass,scss}'",
+    "lint:conflict": "eslint-config-prettier .eslintrc.js",
+    "format": "prettier --write --loglevel=warn 'src/**/*.{js,jsx,ts,tsx,gql,graphql,json}'",
+    "preinstall": "typesync || :"
+  },
+  ...
+}
+```
