@@ -168,6 +168,7 @@ module.exports = {
 ```
 
 `tsconfig.eslint.json` を以下の内容で作成
+
 ```json
 {
   "extends": "./tsconfig.json",
@@ -184,6 +185,7 @@ module.exports = {
 ```
 
 `.eslintignore` を以下の内容で作成
+
 ```ignorelang
 build/
 public/
@@ -195,6 +197,7 @@ public/
 ```
 
 `package.json`へ追加
+
 ```json
 {
   ...
@@ -209,3 +212,60 @@ public/
 ```
 
 ## Prettier
+
+```shell
+yarn add -D prettier eslint-config-prettier
+(typesync)
+yarn
+```
+
+`.eslintrc.js`へ追加。  
+上書きされるので追加順を守ること。
+
+```js
+// .eslintrc.js
+module.exports = {
+  // ...
+  extends: [
+    // ...
+    'prettier',
+    // 以下パッケージはprettierにマージされたので指定不必要
+    // 'prettier/@typescript-eslint',
+    // 'prettier/react',
+  ],
+  // ...
+}
+```
+
+`.prettierrc`を作成
+
+```text
+singleQuote: true
+trailingComma: "all"
+```
+
+prettierルールが適切に設定されたかの確認コマンド
+
+```shell
+npx eslint-config-prettier 'src/**/*.{js,jsx,ts,tsx}'
+
+# 期待値
+# => No rules that are unnecessary or conflict with Prettier were found.
+```
+
+`package.json`へscript追加
+
+```json
+{
+  ...
+  "scripts": {
+    ...
+    "fix": "npm run -s format && npm run -s lint:fix",
+    "format": "prettier --write --loglevel=warn 'src/**/*.{js,jsx,ts,tsx,gql,graphql,json}'",
+    ...
+    "lint:conflict": "eslint-config-prettier .eslintrc.js",
+    ...
+  },
+  ...
+}
+```

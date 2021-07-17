@@ -4,9 +4,8 @@ import './App.css';
 const App: FC = () => (
   <div className="App">
     <header className="App-header">
-      <p>
-        Takao Sone&aposs React Boilerplate
-      </p>
+      <p>Takao Sone&aposs React Boilerplatei</p>
+      <span>sone</span>
     </header>
   </div>
 );
