@@ -322,3 +322,82 @@ module.exports = {
   ...
 }
 ```
+
+## Other style, lint settings
+
+```shell
+yarn add -D eslint-plugin-prefer-arrow
+```
+
+`.eslintrc.js`への追加
+
+```js
+module.exports = {
+  // ...
+  plugins: [
+    '@typescript-eslint',
+    'import',
+    'jsx-a11y',
+    +'prefer-arrow',
+    'react',
+    'react-hooks',
+  ],
+  // ...
+  rules: {
+    'prefer-arrow/prefer-arrow-functions': [
+      'error',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ]
+  }
+}
+```
+
+```shell
+# lintの確認
+yarn fix
+```
+
+Gitとlintの連携  
+`git commit`時に構文チェックを走らせ、問題なければcommitされるようにする。
+
+```shell
+yarn add -D husky lint-staged
+```
+
+`package.json`に以下を追加
+
+```json
+{
+  "scripts": {
+    ...
+    "prepare": "husky install"
+  },
+  ...
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write --loglevel=warn",
+      "eslint --fix"
+    ],
+    "src/**/*.css": [
+      "stylelint --fix"
+    ],
+    "src/**/*.{gql,graphql,json}": [
+      "prettier --write --loglevel=warn"
+    ]
+  }
+}
+```
+
+huskyの設定
+
+```shell
+yarn prepare
+npx husky add .husky/pre-commit "lint-staged"
+git add .
+git commit -m 'message'
+# これでhuskyの設定が完了。以降のcommit前にlint-stagedが実行される。
+```

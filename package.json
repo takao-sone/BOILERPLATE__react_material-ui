@@ -30,7 +30,8 @@
     "lint:style:fix": "stylelint --fix 'src/**/*.{css,less,sass,scss}'",
     "lint:conflict": "eslint-config-prettier .eslintrc.js",
     "format": "prettier --write --loglevel=warn 'src/**/*.{js,jsx,ts,tsx,gql,graphql,json}'",
-    "preinstall": "typesync || :"
+    "preinstall": "typesync || :",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -60,13 +61,28 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-recess-order": "^2.4.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
     "typesync": "^0.8.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write --loglevel=warn",
+      "eslint --fix"
+    ],
+    "src/**/*.css": [
+      "stylelint --fix"
+    ],
+    "src/**/*.{gql,graphql,json}": [
+      "prettier --write --loglevel=warn"
+    ]
   }
 }

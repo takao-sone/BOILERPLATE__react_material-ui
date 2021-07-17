@@ -30,6 +30,7 @@ module.exports = {
     'import',
     'jsx-a11y',
     'react-hooks',
+    'prefer-arrow',
   ],
   root: true,
   rules: {

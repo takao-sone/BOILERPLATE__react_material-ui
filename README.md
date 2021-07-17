@@ -1,5 +1,19 @@
 # Takao Sone's React Boilerplate
 
+## How to Set Up
+
+```shell
+git clone {this-repository}
+yarn
+
+# If husky hook doesn't work, below might be helpful.
+yarn prepare
+npx husky add .husky/pre-commit "lint-staged"
+git add .
+git commit -m 'message'
+```
+[husky - Github](https://github.com/typicode/husky)
+
 ## Base Libraries
 
 - React
