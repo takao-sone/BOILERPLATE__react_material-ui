@@ -421,3 +421,11 @@ ReactDOM.render(
   document.getElementById('root'),
 );
 ```
+
+## Error Boundary
+
+`AppErrorBoundary.tsx`を作成する。
+
+[Error Boundary](https://ja.reactjs.org/docs/error-boundaries.html)  
+[Error Boundaries](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/error_boundaries/)  
+[【React in TypeScript】ErrorBoundariesの使用方法と注意点](https://marsquai.com/745ca65e-e38b-4a8e-8d59-55421be50f7e/f83dca4c-79db-4adf-b007-697c863b82a5/1df35b56-cba0-472f-8393-813e16a861c7/)
