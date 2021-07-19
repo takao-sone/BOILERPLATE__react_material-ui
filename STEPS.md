@@ -401,3 +401,23 @@ git add .
 git commit -m 'message'
 # これでhuskyの設定が完了。以降のcommit前にlint-stagedが実行される。
 ```
+
+## React Router
+
+```shell
+yarn add history react-router-dom@next
+```
+
+```tsx
+// ...
+import { BrowserRouter } from 'react-router-dom';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
+```

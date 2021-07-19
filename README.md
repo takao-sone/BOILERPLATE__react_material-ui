@@ -14,6 +14,11 @@ git commit -m 'message'
 ```
 [husky - Github](https://github.com/typicode/husky)
 
+### WARNING
+
+This boilerplate uses `react-router-dom@6.0.0-beta.0`.  
+If the release version of react-router-dom is public, PLEASE UPDATE.
+
 ## Base Libraries
 
 - React
