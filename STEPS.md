@@ -467,3 +467,18 @@ ReactDOM.render(
   document.getElementById('root'),
 );
 ```
+
+## Material UI
+
+```shell
+yarn add @material-ui/core@next @emotion/react @emotion/styled @material-ui/icons@next
+```
+
+公式の例：  
+https://next.material-ui.com/guides/interoperability/
+
+`emotion`の`css`を用いてスタイルする場合：  
+https://github.com/emotion-js/emotion/discussions/2291  
+https://codesandbox.io/s/emotion-material-ui-example-ni92b?file=/src/App.tsx
+
+## 続き

@@ -1,5 +1,17 @@
 # Takao Sone's React Boilerplate
 
+### WARNING
+
+#### React Router
+
+This boilerplate uses `react-router-dom@6.0.0-beta.0`.  
+If the release version of react-router-dom is public, PLEASE UPDATE.
+
+#### Material-UI
+
+This boilerplate uses `@material-ui/core@v5.0.0-beta.1`.
+If the release version of @material-ui/core is public, PLEASE UPDATE.
+
 ## How to Set Up
 
 ```shell
@@ -13,11 +25,6 @@ git add .
 git commit -m 'message'
 ```
 [husky - Github](https://github.com/typicode/husky)
-
-### WARNING
-
-This boilerplate uses `react-router-dom@6.0.0-beta.0`.  
-If the release version of react-router-dom is public, PLEASE UPDATE.
 
 ## Base Libraries
 
