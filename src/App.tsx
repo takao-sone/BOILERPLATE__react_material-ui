@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 import Test1 from './components/samples/Test1';
 import Test2 from './components/samples/Test2';
 import Test3 from './components/samples/Test3';
@@ -11,7 +11,7 @@ const App: FC = () => (
     <header>
       <p>Takao Sone&apos;s React Boilerplate</p>
     </header>
-    <Button variant="contained">sone</Button>
+    <Button variant="contained">MUI Button</Button>
     <MuiCustomizedComponents />
     <Routes>
       <Route path="/" element={<Test1 />} />

@@ -1,18 +1,15 @@
 import { VFC } from 'react';
-import { Button } from '@material-ui/core';
-import { styled } from '@material-ui/core/styles';
+import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-const StyledDiv = styled('div')`
-  margin: 1rem 0;
-`;
+const StyledDiv = styled('div')({
+  margin: '1rem 0',
+});
 
-const StyledButton = styled(Button)(
-  ({ theme }) => `
-    // comment
-    background-color: ${theme.palette.primary.light};
-    color: yellow;
-  `,
-);
+const StyledButton = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.light,
+  color: 'yellow',
+}));
 
 const MuiCustomizedComponents: VFC = () => (
   <StyledDiv>
