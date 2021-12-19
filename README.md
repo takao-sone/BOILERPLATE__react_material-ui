@@ -1,86 +1,61 @@
-# Takao Sone's React Boilerplate
-
-### WARNING
-
-#### React Router
-
-This boilerplate uses `react-router-dom@6.0.0-beta.0`.  
-If the release version of react-router-dom is public, PLEASE UPDATE.
-
-#### Material-UI
-
-This boilerplate uses `@material-ui/core@v5.0.0-beta.1`.
-If the release version of @material-ui/core is public, PLEASE UPDATE.
+# React Boilerplate
 
 ## How to Set Up
+
+### Dev
 
 ```shell
 git clone {this-repository}
 yarn
+yarn start
+```
 
-# If husky hook doesn't work, below might be helpful.
+### Production
+
+```shell
+yarn build
+
+# serve built codes
+serve -s build
+```
+
+### About samples
+
+If you don't need any samples, please delete them.
+
+```shell
+rm -rf src/components/samples/*
+rm src/styles/sample-styles.ts
+```
+
+## Trouble Shooting
+
+### husky
+
+If husky hook doesn't work, below might be helpful.
+
+```shell
 yarn prepare
 npx husky add .husky/pre-commit "yarn lint-staged"
-git add .
-git commit -m 'message'
 ```
+
 [husky - Github](https://github.com/typicode/husky)
 
-## Base Libraries
+## Libraries
 
-- React
-- TypeScript
+### Main
+
+- Node.js v16.13.1 (Active LTS as of 2021-12-19)
+- TypeScript v4.4
+- React v17
+- React Router v6
+- Material-UI v5
+- React Query v3.34
+
+### Dev Dependencies
+
 - ESLint
 - Prettier
 - Stylelint
-- Material-UI
-- React Query
-
-**Below is the default README texts.**
-
-======================================
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- husky
+- lint-staged
