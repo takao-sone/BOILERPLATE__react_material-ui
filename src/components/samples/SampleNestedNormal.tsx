@@ -1,7 +1,10 @@
 import { VFC } from 'react';
+import SampleStyledDiv from '../../styles/sample-styles';
 
 const SampleNestedNormal: VFC = () => (
-  <div>SampleNestedLayout / NestedTestNormal</div>
+  <SampleStyledDiv>
+    <p>SampleNestedLayout / NestedTestNormal</p>
+  </SampleStyledDiv>
 );
 
 export default SampleNestedNormal;

@@ -12,13 +12,14 @@ const App: FC = () => (
     <header>
       <p>Boilerplate</p>
     </header>
-    <SampleMuiCustomizedComponents />
+
     <Routes>
       <Route path="/" element={<SampleRoot />} />
+      <Route path="sample-mui" element={<SampleMuiCustomizedComponents />} />
       <Route path="sample-nested" element={<SampleNestedLayout />}>
         <Route index element={<SampleNestedIndex />} />
         <Route path="normal" element={<SampleNestedNormal />} />
-        <Route path=":pathParam" element={<SampleNestedPathParam />} />
+        <Route path=":id" element={<SampleNestedPathParam />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

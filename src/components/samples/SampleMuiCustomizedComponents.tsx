@@ -1,10 +1,7 @@
 import { VFC } from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
-const StyledDiv = styled('div')({
-  margin: '1rem 0',
-});
+import SampleStyledDiv from '../../styles/sample-styles';
 
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -12,9 +9,9 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const SampleMuiCustomizedComponents: VFC = () => (
-  <StyledDiv>
+  <SampleStyledDiv>
     <StyledButton variant="contained">Sample</StyledButton>
-  </StyledDiv>
+  </SampleStyledDiv>
 );
 
 export default SampleMuiCustomizedComponents;
