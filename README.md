@@ -20,7 +20,7 @@ yarn
 
 # If husky hook doesn't work, below might be helpful.
 yarn prepare
-npx husky add .husky/pre-commit "lint-staged"
+npx husky add .husky/pre-commit "yarn lint-staged"
 git add .
 git commit -m 'message'
 ```
