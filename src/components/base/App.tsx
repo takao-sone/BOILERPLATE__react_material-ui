@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import SampleRoot from './components/samples/SampleRoot';
-import SampleNestedPathParam from './components/samples/SampleNestedPathParam';
-import SampleNestedNormal from './components/samples/SampleNestedNormal';
-import SampleMuiCustomizedComponents from './components/samples/SampleMuiCustomizedComponents';
-import SampleNestedIndex from './components/samples/SampleNestedIndex';
-import SampleNestedLayout from './components/samples/SampleNestedLayout';
-import SampleNestedSearchParam from './components/samples/SampleNestedSearchParam';
-import AppLayout from './components/base/AppLayout';
+import SampleRoot from '../samples/SampleRoot';
+import SampleNestedPathParam from '../samples/SampleNestedPathParam';
+import SampleNestedNormal from '../samples/SampleNestedNormal';
+import SampleMuiCustomizedComponents from '../samples/SampleMuiCustomizedComponents';
+import SampleNestedIndex from '../samples/SampleNestedIndex';
+import SampleNestedLayout from '../samples/SampleNestedLayout';
+import SampleNestedSearchParam from '../samples/SampleNestedSearchParam';
+import AppLayout from './AppLayout';
 
 const App: FC = () => {
   const appName = 'Boilerplate';

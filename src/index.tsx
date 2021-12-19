@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import App from './App';
+import App from './components/base/App';
 import reportWebVitals from './reportWebVitals';
 import muiTheme from './styles/mui-theme';
 
