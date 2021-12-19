@@ -11,5 +11,13 @@ module.exports = {
   ],
   rules: {
     'string-quotes': 'single',
+    'value-keyword-case': [
+      'lower',
+      {
+        ignoreKeywords: [/.*/],
+        ignoreProperties: [/.*/],
+        ignoreFunctions: [/.*/],
+      },
+    ],
   },
 };

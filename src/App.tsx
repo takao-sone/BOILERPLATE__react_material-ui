@@ -1,32 +1,24 @@
 import React, { FC } from 'react';
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
-import { Button } from '@mui/material';
-import Test1 from './components/samples/Test1';
-import Test2 from './components/samples/Test2';
-import Test3 from './components/samples/Test3';
-import MuiCustomizedComponents from './components/samples/MuiCustomizedComponents';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import SampleRoot from './components/samples/SampleRoot';
+import SampleNestedPathParam from './components/samples/SampleNestedPathParam';
+import SampleNestedNormal from './components/samples/SampleNestedNormal';
+import SampleMuiCustomizedComponents from './components/samples/SampleMuiCustomizedComponents';
+import SampleNestedIndex from './components/samples/SampleNestedIndex';
+import SampleNestedLayout from './components/samples/SampleNestedLayout';
 
 const App: FC = () => (
   <div>
     <header>
-      <p>Takao Sone&apos;s React Boilerplate</p>
+      <p>Boilerplate</p>
     </header>
-    <Button variant="contained">MUI Button</Button>
-    <MuiCustomizedComponents />
+    <SampleMuiCustomizedComponents />
     <Routes>
-      <Route path="/" element={<Test1 />} />
-      <Route
-        path="test"
-        element={
-          <div>
-            test
-            <Outlet />
-          </div>
-        }
-      >
-        <Route path="/" element={<Test1 />} />
-        <Route path=":testCode" element={<Test2 />} />
-        <Route path="/test3" element={<Test3 />} />
+      <Route path="/" element={<SampleRoot />} />
+      <Route path="sample-nested" element={<SampleNestedLayout />}>
+        <Route index element={<SampleNestedIndex />} />
+        <Route path="normal" element={<SampleNestedNormal />} />
+        <Route path=":pathParam" element={<SampleNestedPathParam />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

@@ -7,14 +7,14 @@ const StyledDiv = styled('div')({
 });
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.light,
-  color: 'yellow',
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.primary.contrastText,
 }));
 
-const MuiCustomizedComponents: VFC = () => (
+const SampleMuiCustomizedComponents: VFC = () => (
   <StyledDiv>
-    <StyledButton variant="contained">sample</StyledButton>
+    <StyledButton variant="contained">Sample</StyledButton>
   </StyledDiv>
 );
 
-export default MuiCustomizedComponents;
+export default SampleMuiCustomizedComponents;
